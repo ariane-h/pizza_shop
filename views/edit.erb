@@ -1,0 +1,45 @@
+<h1>EDIT PAGE</h1>
+
+<form method="post" action="/pizza_orders/">
+  <label for="first-name">First Name:</label>
+    <input type="text" name="first_name" id="last-name" value="<%= @order.first_name %>">
+
+  <label for="last-name">Last Name:</label>
+    <input type="text" name="last_name" id="last-name" value="<%= @order.last_name %>">
+
+  <label for="pizza-select">Select a pizza:</label>
+    <select id="pizza-select" name="topping" >
+
+      <% if @order.topping == 'Margherita'%>
+        <option value="Margherita" selected>Margherita</option>
+      <% else %>
+        <option value="Margherita">Margherita</option>
+      <% end %>
+
+      <% if @order.topping == 'Pepperoni'%>
+        <option value="Pepperoni" selected>Pepperoni</option>
+      <% else %>
+        <option value="Pepperoni">Pepperoni</option>
+      <% end %>
+
+      <% if @order.topping == 'Quattro Formaggi'%>
+        <option value="Quattro Formaggi" selected>Quattro Formaggi</option>
+      <% else %>
+        <option value="Quattro Formaggi">Quattro Formaggi</option>
+      <% end %>
+
+      <% if @order.topping == 'Vegan'%>
+        <option value="Vegan" selected>Vegan</option>
+      <% else %>
+        <option value="Vegan">Vegan</option>
+      <% end %>
+
+
+    </select>
+
+  <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" id="quantity" value="<%= @order.quantity %>">
+
+  <input type="submit" value="Update Pizza">
+
+</form>
